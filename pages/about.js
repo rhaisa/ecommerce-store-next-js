@@ -1,16 +1,11 @@
 import Head from 'next/head';
+import Layout from '../components/Layout';
 
 export default function About() {
   return (
-    <>
-      <Head>
-        <title>About</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header> My page</header>
-      <main>
-        <h1></h1>
-      </main>
-    </>
+    <div>
+      <Layout />
+      <h1> Bem Vindos</h1>
+    </div>
   );
 }

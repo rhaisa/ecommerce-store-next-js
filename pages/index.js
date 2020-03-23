@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import products from '../db';
 import ProductsHero from '../components/ProductsHero';
 
-const Home = () => (
+const Home = props => (
   <>
     <Layout>
       <main>
@@ -22,6 +21,7 @@ const Home = () => (
           </div>
         </div>
         <div className="icons">
+          {/* https://www.flaticon.com/packs/e-commerce-48 */}
           <div>
             <img className="icons-img" src="/commerce-and-shopping.svg" />
             <p className="icons-content">Fair price</p>
@@ -47,18 +47,8 @@ const Home = () => (
             <p className="icons-content">Discounts</p>
           </div>
         </div>
-        <ProductsHero />
+        <ProductsHero products={props.products} />
       </main>
-
-      <footer>
-        <a
-          href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
@@ -81,7 +71,8 @@ const Home = () => (
 
         .hero {
           display: flex;
-          max-width: 50%;
+          width: 100%;
+          max-width: 700px;
           margin-bottom: 40px;
         }
         .hero h3 {
@@ -91,18 +82,13 @@ const Home = () => (
 
         .hero p {
           padding-left: 15px;
-          display: flex;
-          float: right;
-
-          // align-items: center;
-          // justify-content: center;
         }
         .main-img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;
-          float: left;
+          flex: 1 0 0;
+        }
+
+        .content {
+          flex: 1 0 0;
         }
 
         .icons {
@@ -123,15 +109,6 @@ const Home = () => (
         .icons-img {
           width: 60px;
           margin-bottom: 20px;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
 
         footer img {
@@ -253,11 +230,12 @@ const Home = () => (
 
 export default Home;
 
-{
-  /* <p className="description">
-        Get started by editing
-        <Link href="/about">
-          <a> About Page </a>
-        </Link>
-      </p> */
+export async function getStaticProps() {
+  const { getAllProducts } = await import('../db');
+  const products = await getAllProducts();
+  return {
+    props: {
+      products: products,
+    },
+  };
 }

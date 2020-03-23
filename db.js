@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+require('dotenv').config();
 const postgres = require('postgres');
 const defaultProducts = [
   {
@@ -57,7 +57,7 @@ const defaultProducts = [
 ];
 
 const sql = process.env.DATABASE_URL
-  ? postgres(process.env.DATABASE_URL)
+  ? postgres(process.env.DATABASE_URL, { ssl: true })
   : postgres();
 // const sql = postgres();
 

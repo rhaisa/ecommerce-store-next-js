@@ -6,7 +6,7 @@
     "node": "12.16.x"
   },
   "scripts": {
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "node prepareDatabase.js && npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

@@ -2,7 +2,11 @@
   "name": "ecommerce-store-next-js",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.16.x"
+  },
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

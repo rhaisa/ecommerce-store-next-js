@@ -21,7 +21,9 @@ async function createTable() {
 createTable()
   .then(() => {
     console.log('complited');
+    process.exit();
   })
   .catch(err => {
     console.error('error:  ', err);
+    process.exit(1);
   });

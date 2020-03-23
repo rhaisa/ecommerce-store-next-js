@@ -56,7 +56,9 @@ const defaultProducts = [
   },
 ];
 
-const sql = postgres();
+const sql = process.env.DATABASE_URL
+  ? postgres(process.env.DATABASE_URL)
+  : postgres();
 
 /** To create your Products database table, execute the following command into your PSQL console: 
   

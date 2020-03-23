@@ -16,4 +16,10 @@ async function createTable() {
   );
   `;
 }
-createTable();
+createTable()
+  .then(() => {
+    console.log('complited');
+  })
+  .catch(err => {
+    console.error('error:  ', err);
+  });

@@ -57,7 +57,7 @@ const defaultProducts = [
 ];
 
 const sql = process.env.DATABASE_URL
-  ? postgres(process.env.DATABASE_URL, { ssl: true })
+  ? postgres(process.env.DATABASE_URL, { ssl: { rejectUnauthorized: false } })
   : postgres();
 // const sql = postgres();
 

@@ -7,7 +7,7 @@ export const AppProvider = props => {
   const [basket, setBasket] = useState(null);
   useEffect(() => {
     if (process.browser) {
-      let basketData = localStorage.getItem(key);
+      let basketData = localStorage.getItem('basket-finde-me-beauty');
       basketData = null !== basketData ? JSON.parse(basketData) : '';
       setBasket(basket);
     }

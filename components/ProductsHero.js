@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function ProductsHero(props) {
   console.log(props.products);
   return (
-    <div className="container">
+    <div className="container" id="partners">
       <h2> Your Best Value Proposition</h2>
       <p>
         “If you don’t try this service, you won’t become the superhero you were
@@ -19,11 +19,20 @@ export default function ProductsHero(props) {
                 <p>{product.short_description}</p>
               </div>
               <div className="button-container">
-                <button className="button">
-                  <a href={product.instagram_url}>About Me</a>
-                </button>
+                <a
+                  className="btn btn-outline-dark"
+                  href={product.instagram_url}
+                >
+                  About Me
+                </a>
+
                 <Link href="/products/[id]" as={`/products/${product.id}`}>
-                  <button className="button">Schedule a time</button>
+                  <button
+                    type="button"
+                    className="button-margin btn btn-outline-dark"
+                  >
+                    Schedule a time
+                  </button>
                 </Link>
               </div>
             </div>
@@ -32,9 +41,11 @@ export default function ProductsHero(props) {
       </div>
       <style jsx>{`
         .container {
-          background-color: lightgray;
+          background-color: #f8f9fa;
           padding: 20px;
           text-align: center;
+          font-family: 'Comic Neue';
+          color: rgb(60, 74, 106);
         }
         .box {
           padding-top: 10px;
@@ -47,11 +58,15 @@ export default function ProductsHero(props) {
           border: 5px solid black;
           width: 252px;
         }
-
+        h5 {
+          font-family: 'Comic Neue';
+          font-weight: bold;
+        }
         .pshortdescription {
           padding-top: 10px;
           background-color: #fff;
           width: 252px;
+          min-height: 106px;
         }
 
         .button-container {
@@ -61,15 +76,13 @@ export default function ProductsHero(props) {
           text-align: center;
           padding-top: 10px;
           padding-bottom: 30px;
-          padding-right: -10px;
         }
         .button:nth-child(2) {
           margin-left: 15px;
         }
 
-        .button {
-          background-color: #f6f6f6;
-          border-radius: 5px;
+        .button-margin {
+          margin-left: 5px;
         }
       `}</style>
     </div>

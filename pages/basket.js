@@ -1,19 +1,42 @@
-import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import Product from './products/[id]';
-import { getStaticProps } from '.';
 import cookies from 'next-cookies';
+import Cookies from 'js-cookie';
 
 export default function Basket(props) {
-  // const { basket } = props;
   const basket = props.basket;
-  // const basket = Cookies.getJSON('basket'); //next.cookies getServerSideProps
 
-  if (typeof basket === 'undefined') {
-    return <div>Error in the system</div>;
+  if (basket === null) {
+    return (
+      <Layout>
+        <div className="empty">
+          <h2>SHOPPING CART IS EMPTY</h2>
+          <p>You have no items in your shopping cart.</p>
+          <p>
+            To continue shopping please{' '}
+            <Link href="/#partners">
+              <a>Click here</a>
+            </Link>
+          </p>
+          <style jsx>
+            {`
+              .empty {
+                font-family: 'Comic Neue';
+                text-align: center;
+                margin-top: 150px;
+                margin-bottom: 150px;
+                color: rgb(60, 74, 106);
+              }
+            `}
+          </style>
+        </div>
+      </Layout>
+    );
   }
-
+  const deleteBasket = () => {
+    Cookies.remove('basket');
+    window.location.reload();
+  };
   console.log(basket);
   return (
     <Layout>
@@ -26,6 +49,7 @@ export default function Basket(props) {
               <th>Service</th>
               <th>Hours</th>
               <th>Total</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +57,11 @@ export default function Basket(props) {
               <td>{basket.name}</td>
               <td>{basket.hours}</td>
               <td>{`€ ${basket.price * basket.hours}`} </td>
+              <td>
+                <button className="buttonTrash" onClick={deleteBasket}>
+                  <img className="trash" src="/trash.svg" />
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -99,8 +128,72 @@ export default function Basket(props) {
               className="form-control col-lg-9"
             ></input>
           </div>
+          <div className="row">
+            <label for="scheduleDate" className="address" className="col-lg-3">
+              Schedule Date:
+            </label>
+            <input
+              type="date"
+              name="scheduleDate"
+              className="form-control col-lg-9"
+            ></input>
+          </div>
+        </form>
+
+        <div>
+          <p className="data"> PAYMENT METHOD</p>
+          {/* <input type="checkbox">PayPal</input>
+          <input type="checkbox">Credit Card</input> */}
+        </div>
+        <form>
+          <div className="row">
+            <label for="nameOnCard" className="col-lg-3">
+              Name on Card:
+            </label>
+            <input
+              type="name"
+              name="nameOnCard"
+              className="form-control col-lg-9"
+            />
+          </div>
+          <div className="row">
+            <label for="cardNumber:" className="col-lg-3">
+              Card number:
+            </label>
+            <input
+              type="number"
+              name="cardNumber"
+              className="form-control col-lg-9"
+            ></input>
+          </div>
+          <div className="row">
+            <label for="expiryDate" className="address" className="col-lg-3">
+              Expiry Date:
+            </label>
+            <input
+              type="text"
+              name="expiryDate"
+              className="form-control col-lg-9"
+            ></input>
+          </div>
+          <div className="row">
+            <label for="securityCode" className="col-lg-3">
+              Security code:
+            </label>
+            <input
+              type="number"
+              name="securityCode"
+              className="form-control col-lg-9"
+            ></input>
+          </div>
+          <Link href="/thankYou">
+            <button type="button" className="button btn btn-outline-dark">
+              Finish Payment
+            </button>
+          </Link>
         </form>
       </div>
+
       <style jsx>{`
         h3 {
           text-align: center;
@@ -123,12 +216,15 @@ export default function Basket(props) {
           margin-left: auto;
           margin-right: auto;
           margin-bottom: 20px;
+          text-align: center;
         }
         thead tr {
-          background-color: lightgray;
+          background-color: #f8f9fa;
           border: 1px solid #222;
         }
-
+        .trash {
+          width: 28px;
+        }
         .data {
           border: 2px solid #222;
           background-color: #222;
@@ -147,13 +243,23 @@ export default function Basket(props) {
         input {
           margin-bottom: 10px;
         }
+        .button {
+          margin-top: 20px;
+          margin-left: auto;
+          margin-bottom: 100px;
+          display: block;
+        }
+        .buttonTrash {
+          background: none;
+          border: none;
+        }
       `}</style>
     </Layout>
   );
 }
 
 export async function getServerSideProps(ctx) {
-  const basket = cookies(ctx).basket;
+  const basket = cookies(ctx).basket || null;
   return {
     props: {
       basket: basket,

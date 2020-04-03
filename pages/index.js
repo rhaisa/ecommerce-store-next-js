@@ -7,16 +7,16 @@ const Home = props => (
     <Layout>
       <main>
         <div className="hero">
-          <img className="main-img" src="/hair.png" />
+          <img className="main-img" src="/unsplash.jpg" />
           <div className="content">
-            <h3>Your Best Value Proposition</h3>
+            <h3>Treat yourself at home</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              From the sofa, book and rebook hairdressing & beauty appointments.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              we make it easier for you to find and book your next appointment.
+              You have the opportunity to make an appointment independently
+              around the clock.
             </p>
           </div>
         </div>
@@ -51,15 +51,32 @@ const Home = props => (
       </main>
 
       <style jsx>{`
-        .container {
-          // min-height: 100vh;
-          // padding: 0 0.5rem;
-          // display: flex;
-          // flex-direction: column;
-          // justify-content: center;
-          // align-items: center;
+        .hero {
+          display: flex;
+          width: 100%;
+          max-width: 720px;
+          margin-bottom: 40px;
+        }
+        .hero h3 {
+          display: block;
+          margin-left: 15px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-size: 28px;
+          font-family: 'Comic Neue', cursive;
+          color: rgb(60, 74, 106);
         }
 
+        .hero p {
+          padding-left: 15px;
+
+          font-family: 'Comic Neue', cursive;
+          color: rgb(60, 74, 106);
+        }
+
+        .main-img {
+          width: 50%;
+        }
         main {
           padding: 5rem 0;
           flex: 1;
@@ -67,28 +84,6 @@ const Home = props => (
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-
-        .hero {
-          display: flex;
-          width: 100%;
-          max-width: 700px;
-          margin-bottom: 40px;
-        }
-        .hero h3 {
-          display: block;
-          margin-left: 15px;
-        }
-
-        .hero p {
-          padding-left: 15px;
-        }
-        .main-img {
-          flex: 1 0 0;
-        }
-
-        .content {
-          flex: 1 0 0;
         }
 
         .icons {
@@ -104,6 +99,9 @@ const Home = props => (
           font-size: 13px;
           text-align: center;
           justify-content: space-between;
+          font-family: 'Comic Neue';
+          font-weight: bold;
+          color: rgb(60, 74, 106);
         }
 
         .icons-img {

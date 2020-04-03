@@ -53,25 +53,31 @@ export default function Product(props) {
               <option value="4">4 </option>
               <option value="5">5 </option>
             </select>
+
             <Link href="/basket">
-              <button onClick={onButtonClick} className="button">
-                Add to the basket
+              <button
+                onClick={onButtonClick}
+                type="button"
+                className="button btn btn-outline-dark"
+              >
+                Add to the Basket
               </button>
             </Link>
           </div>
         </div>
-        <h1>{hours}</h1>
       </div>
       <style jsx>{`
         .product-main {
           display: flex;
           width: 100%;
           max-width: 700px;
-          margin-top: 20px;
-          margin-bottom: 40px;
+          margin-top: 50px;
+          margin-bottom: 100px;
           margin-left: auto;
           margin-right: auto;
           position: relative;
+          font-family: 'Comic Neue';
+          color: rgb(60, 74, 106);
         }
 
         .img {
@@ -80,9 +86,11 @@ export default function Product(props) {
           width: 250px;
         }
         h2 {
-          font-family: cursive;
+          font-family: 'Comic Neue';
+          font-weight: bold;
           margin-bottom: 20px;
           margin-top: 10px;
+          color: rgb(60, 74, 106);
         }
 
         .product-details {
@@ -107,6 +115,7 @@ export default function Product(props) {
           bottom: 0px;
           display: block;
           width: 450px;
+          font-weight: bold;
         }
       `}</style>
     </Layout>

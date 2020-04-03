@@ -1,7 +1,8 @@
 import Navbar from './Navbar';
 import Head from 'next/head';
+import Header from './Header';
 import Footer from './Footer';
-import { AppProvider } from './context/AppContext';
+import { AppProvider } from './AppContext';
 
 const Layout = props => {
   return (
@@ -15,8 +16,12 @@ const Layout = props => {
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossOrigin="anonymous"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
-        <Navbar />
+        <Header />
         {props.children}
         <Footer />
       </div>

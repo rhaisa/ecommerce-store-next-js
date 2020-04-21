@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import ProductsHero from '../components/ProductsHero';
 
-const Home = props => (
+const Home = (props) => (
   <>
     <Layout>
       <main>
@@ -11,12 +11,13 @@ const Home = props => (
           <div className="content">
             <h3>Treat yourself at home</h3>
             <p>
-              From the sofa, book and rebook hairdressing & beauty appointments.
+              From the sofa, book and rebook hairdressing and beauty
+              appointments.
             </p>
             <p>
-              we make it easier for you to find and book your next appointment.
-              You have the opportunity to make an appointment independently
-              around the clock.
+              We make it easier for you to find and book your next appointment.
+              You can find the right hairdresser, manicure, pedicure and beauty
+              treatment curated by the Find You Beauty community.
             </p>
           </div>
         </div>
@@ -29,7 +30,7 @@ const Home = props => (
           <div>
             <img className="icons-img" src="/calendar.svg" />
             <p className="icons-content">
-              own time and <br /> schedule
+              on your own <br /> schedule
             </p>
           </div>
           <div>

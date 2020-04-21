@@ -15,7 +15,7 @@ export default function About() {
           specialists that are available to reach out to you.
         </p>
         <p>
-          we make it easier for you to find and book your next appointment. You
+          We make it easier for you to find and book your next appointment. You
           have the opportunity to make an appointment independently around the
           clock. You can find the right hairdresser, manicure, pedicure and
           beauty treatment collected by the Find You Beauty community.

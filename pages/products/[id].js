@@ -7,23 +7,46 @@ import Basket from '../basket';
 import React, { useState } from 'react';
 
 export default function Product(props) {
-  // "products" é a lista de produtos
+  // "products" is the list of products
 
   const [hours, setHours] = useState(1);
   const { product } = props;
 
-  const onSelectChange = evt => {
-    setHours(evt.target.value);
+  const onSelectChange = (evt) => {
+    setHours(parseInt(evt.target.value));
   };
 
   const onButtonClick = () => {
-    const cookieValue = {
-      id: product.id,
-      hours: hours,
-      name: product.name,
-      price: product.price,
-    };
-    Cookies.set('basket', cookieValue);
+    let basket = [];
+    if (Cookies.get('basket') !== undefined) {
+      basket = JSON.parse(Cookies.get('basket'));
+    }
+    const possibleProduct = basket.find((p) => product.id === p.id);
+    if (possibleProduct) {
+      const newHours = possibleProduct.hours + hours;
+      const newProduct = {
+        ...possibleProduct,
+        hours: newHours,
+      };
+      const newBasket = [
+        ...basket.filter((p) => p.id !== newProduct.id),
+        newProduct,
+      ];
+      Cookies.set('basket', newBasket);
+    } else {
+      const cookieValue = [
+        ...basket,
+        {
+          id: product.id,
+          hours: hours,
+          name: product.name,
+          price: product.price,
+        },
+      ];
+
+      Cookies.set('basket', cookieValue);
+    }
+
     Router.push('/basket');
   };
 
@@ -140,7 +163,7 @@ export async function getStaticProps(ctx) {
 export async function getStaticPaths() {
   const { getAllProducts } = await import('../../db');
   const products = await getAllProducts();
-  const paths = products.map(function(product) {
+  const paths = products.map(function (product) {
     return {
       params: { id: `${product.id}` },
     };

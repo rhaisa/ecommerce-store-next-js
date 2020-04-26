@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 
-const Navbar = props => {
+const Navbar = (props) => {
   const cookie = Cookies.get('basket');
   let basketBubble = null;
   if (cookie !== undefined) {
     const basket = JSON.parse(cookie);
+
+    const sumTotal = basket.reduce(function (total, product) {
+      const itemTotal = product.hours * product.price;
+      return total + itemTotal;
+    }, 0);
+
     basketBubble = (
       <div className="basket-price">
-        {`${basket.hours * basket.price}€`}
+        {`${sumTotal}€`}
         <style jsx>
           {`
             .basket-price {
@@ -30,6 +36,7 @@ const Navbar = props => {
         </style>
       </div>
     );
+  } else {
   }
 
   return (

@@ -1,26 +1,12 @@
-import Link from 'next/link';
 import Layout from '../components/Layout';
 import ProductsHero from '../components/ProductsHero';
+import CarouselImg from '../components/CarouselImg';
 
 const Home = (props) => (
   <>
     <Layout>
+      <CarouselImg />
       <main>
-        <div className="hero">
-          <img className="main-img" src="/unsplash.jpg" />
-          <div className="content">
-            <h3>Treat yourself at home</h3>
-            <p>
-              From the sofa, book and rebook hairdressing and beauty
-              appointments.
-            </p>
-            <p>
-              We make it easier for you to find and book your next appointment.
-              You can find the right hairdresser, manicure, pedicure and beauty
-              treatment curated by the Find You Beauty community.
-            </p>
-          </div>
-        </div>
         <div className="icons">
           {/* https://www.flaticon.com/packs/e-commerce-48 */}
           <div>
@@ -90,14 +76,14 @@ const Home = (props) => (
         .icons {
           width: 70%;
           display: flex;
-          margin-top: 80px;
+          margin-top: 50px;
           justify-content: space-between;
           text-align: center;
         }
 
         .icons-content {
           width: 100%;
-          font-size: 13px;
+          font-size: 18px;
           text-align: center;
           justify-content: space-between;
           font-family: 'Comic Neue';
@@ -106,7 +92,7 @@ const Home = (props) => (
         }
 
         .icons-img {
-          width: 60px;
+          width: 70px;
           margin-bottom: 20px;
         }
 

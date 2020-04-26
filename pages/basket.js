@@ -33,11 +33,12 @@ export default function Basket(props) {
       </Layout>
     );
   }
-  const deleteBasket = () => {
-    Cookies.remove('basket');
+  const deleteProduct = (productId) => {
+    const newBasket = basket.filter((product) => product.id !== productId);
+    Cookies.set('basket', JSON.stringify(newBasket));
     window.location.reload();
   };
-  console.log(basket);
+
   return (
     <Layout>
       <div>
@@ -53,16 +54,23 @@ export default function Basket(props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{basket.name}</td>
-              <td>{basket.hours}</td>
-              <td>{`€ ${basket.price * basket.hours}`} </td>
-              <td>
-                <button className="buttonTrash" onClick={deleteBasket}>
-                  <img className="trash" src="/trash.svg" />
-                </button>
-              </td>
-            </tr>
+            {basket.map((product) => {
+              return (
+                <tr>
+                  <td>{product.name}</td>
+                  <td>{product.hours}</td>
+                  <td>{`€ ${product.price * product.hours}`} </td>
+                  <td>
+                    <button
+                      className="buttonTrash"
+                      onClick={() => deleteProduct(product.id)}
+                    >
+                      <img className="trash" src="/trash.svg" />
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <div>

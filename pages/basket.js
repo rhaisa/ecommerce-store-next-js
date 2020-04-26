@@ -94,47 +94,52 @@ export default function Basket(props) {
               className="form-control col-lg-9"
             ></input>
           </div>
-          <div className="row">
-            <label for="address" className="address" className="col-lg-3">
-              Address:
-            </label>
-            <input
-              type="address"
-              name="address"
-              className="form-control col-lg-9"
-            ></input>
+
+          <div className="address ">
+            <div className="row">
+              <label for="address" className="address " className="col-lg-3 ">
+                Address:
+              </label>
+              <input
+                type="address"
+                name="address"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
+            <div className="row">
+              <label for="zipCode" className="col-lg-3">
+                Zip Code:
+              </label>
+              <input
+                type="zipCode"
+                name="zipCode"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
           </div>
-          <div className="row">
-            <label for="zipCode" className="col-lg-3">
-              Zip Code:
-            </label>
-            <input
-              type="zipCode"
-              name="zipCode"
-              className="form-control col-lg-9"
-            ></input>
+          <div className="contact">
+            <div className="row">
+              <label for="country" className="col-lg-3">
+                Country:
+              </label>
+              <input
+                type="country"
+                name="country"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
+            <div className="row">
+              <label for="phone" className="col-lg-3">
+                Phone Number:
+              </label>
+              <input
+                type="phone"
+                name="phone"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
           </div>
-          <div className="row">
-            <label for="country" className="col-lg-3">
-              {' '}
-              Country:
-            </label>
-            <input
-              type="country"
-              name="country"
-              className="form-control col-lg-9"
-            ></input>
-          </div>
-          <div className="row">
-            <label for="phone" className="col-lg-3">
-              Phone Number:
-            </label>
-            <input
-              type="phone"
-              name="phone"
-              className="form-control col-lg-9"
-            ></input>
-          </div>
+
           <div className="row">
             <label for="scheduleDate" className="address" className="col-lg-3">
               Schedule Date:
@@ -173,25 +178,27 @@ export default function Basket(props) {
               className="form-control col-lg-9"
             ></input>
           </div>
-          <div className="row">
-            <label for="expiryDate" className="address" className="col-lg-3">
-              Expiry Date:
-            </label>
-            <input
-              type="text"
-              name="expiryDate"
-              className="form-control col-lg-9"
-            ></input>
-          </div>
-          <div className="row">
-            <label for="securityCode" className="col-lg-3">
-              Security code:
-            </label>
-            <input
-              type="number"
-              name="securityCode"
-              className="form-control col-lg-9"
-            ></input>
+          <div className="security ">
+            <div className="row">
+              <label for="expiryDate" className="address" className="col-lg-3">
+                Expiry Date:
+              </label>
+              <input
+                type="text"
+                name="expiryDate"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
+            <div className="row">
+              <label for="securityCode" className="col-lg-3">
+                Security code:
+              </label>
+              <input
+                type="number"
+                name="securityCode"
+                className="form-control col-lg-9"
+              ></input>
+            </div>
           </div>
           <Link href="/thankYou">
             <button type="button" className="button btn btn-outline-dark">
@@ -245,6 +252,20 @@ export default function Basket(props) {
           max-width: 800px;
           margin-left: auto;
           margin-right: auto;
+        }
+        .address {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .contact {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .security {
+          display: flex;
+          justify-content: space-between;
         }
 
         input {

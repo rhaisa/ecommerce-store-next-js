@@ -120,22 +120,23 @@ export default function Product(props) {
         }
 
         .inputDescription {
-          float: left;
-          margin-right: 15px;
+          text-align: center;
         }
 
         .inputbox {
-          width: 150px;
+          width: 100px;
         }
         .container {
           margin-top: 50px;
+          display: flex;
+          justify-content: space-around;
         }
 
         .button {
           position: absolute;
           bottom: 0px;
           display: block;
-          width: 450px;
+          width: 400px;
           font-weight: bold;
         }
       `}</style>

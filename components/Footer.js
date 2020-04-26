@@ -44,6 +44,7 @@ const Footer = () => (
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 10px;
+        font-weight: bold;
       }
 
       .linksFooter {

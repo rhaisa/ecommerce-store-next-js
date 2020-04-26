@@ -1,19 +1,18 @@
-exports.up = async function(sql) => {
+exports.up = async (sql) => {
   console.log('Creating products table...');
   await sql`
    CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    name VARCHAR  NOT NULL,
+    name VARCHAR(255)  NOT NULL,
 		description TEXT NOT NULL,
-    shortDescription TEXT NOT NULL,
+    short_description TEXT NOT NULL,
     price DECIMAL NOT NULL,
-		image ??,
-		instragramUrl VARCHAR  NOT NULL
-    
+		image VARCHAR(255)  NOT NULL,
+		instragram_url VARCHAR(255)  NOT NULL
     );`;
 };
 
-exports.down = async function(sql) {
+exports.down = async (sql) => {
   console.log('Droping products table...');
   await sql`
    DROP TABLE products;`;

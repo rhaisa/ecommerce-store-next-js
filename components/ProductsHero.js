@@ -20,19 +20,16 @@ export default function ProductsHero(props) {
               </div>
               <div className="button-container">
                 <a
-                  className="btn btn-outline-dark"
+                  className="btn-style btn btn-outline-dark"
                   href={product.instagram_url}
                 >
                   About Me
                 </a>
 
                 <Link href="/products/[id]" as={`/products/${product.id}`}>
-                  <button
-                    type="button"
-                    className="button-margin btn btn-outline-dark"
-                  >
+                  <a className="btn-style button-margin btn btn-outline-dark">
                     Schedule a time
-                  </button>
+                  </a>
                 </Link>
               </div>
             </div>
@@ -48,7 +45,7 @@ export default function ProductsHero(props) {
           padding: 20px;
           text-align: center;
           font-family: 'Comic Neue';
-          color: rgb(174, 106, 137);
+          color: #fff;
         }
         .box {
           margin-top: 40px;
@@ -81,6 +78,7 @@ export default function ProductsHero(props) {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
+          color: rgb(174, 106, 137);
         }
 
         .button-container {
@@ -99,6 +97,15 @@ export default function ProductsHero(props) {
 
         .button-margin {
           margin-left: 5px;
+        }
+
+        .btn-style {
+          color: rgb(174, 106, 137) !important;
+          border-color: rgb(174, 106, 137);
+        }
+        .btn-style:hover {
+          color: white !important;
+          background-color: rgb(174, 106, 137);
         }
       `}</style>
     </div>

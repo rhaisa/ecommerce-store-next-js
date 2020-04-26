@@ -10,11 +10,9 @@
     "dev": "npm run migrate && next dev",
     "build": "next build",
     "start": "next start -p $PORT && node index.js",
-    "e2e": "cypress open",
     "migrate": "dotenv ley up"
   },
   "devDependencies": {
-    "cypress": "^4.1.0",
     "dotenv-cli": "^3.1.0",
     "jest": "^25.1.0"
   },

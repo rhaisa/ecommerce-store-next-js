@@ -5,7 +5,7 @@ export default function ProductsHero(props) {
   return (
     <div className="bigBox" id="partners">
       <h2> Your Best Value Proposition</h2>
-      <p>
+      <p className="p">
         “If you don’t try this service, you won’t become the superhero you were
         meant to be”
       </p>
@@ -39,12 +39,10 @@ export default function ProductsHero(props) {
       <style jsx>{`
         .bigBox {
           margin-top: 80px;
-
           width: 100%;
           background-color: rgb(60, 74, 106);
           padding: 20px;
           text-align: center;
-          font-family: 'Comic Neue';
           color: #fff;
         }
         .box {
@@ -58,6 +56,10 @@ export default function ProductsHero(props) {
           justify-content: center;
         }
 
+        .p {
+          font-size: 20px;
+        }
+
         .img {
           border: 5px solid white;
           width: 300px;
@@ -66,7 +68,6 @@ export default function ProductsHero(props) {
           margin-right: auto;
         }
         h5 {
-          font-family: 'Comic Neue';
           font-weight: bold;
         }
         .pshortdescription {

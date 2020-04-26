@@ -99,7 +99,6 @@ export default function Product(props) {
           margin-left: auto;
           margin-right: auto;
           position: relative;
-          font-family: 'Comic Neue';
           color: rgb(60, 74, 106);
         }
 
@@ -109,7 +108,6 @@ export default function Product(props) {
           width: 250px;
         }
         h2 {
-          font-family: 'Comic Neue';
           font-weight: bold;
           margin-bottom: 20px;
           margin-top: 10px;

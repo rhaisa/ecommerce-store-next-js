@@ -21,7 +21,6 @@ export default function Basket(props) {
           <style jsx>
             {`
               .empty {
-                font-family: 'Comic Neue';
                 text-align: center;
                 margin-top: 150px;
                 margin-bottom: 150px;

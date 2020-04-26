@@ -69,7 +69,7 @@ const Navbar = (props) => {
             </li>
             <li className="nav-item">
               <Link href="/#partners">
-                <a className="nav-link">Partners</a>
+                <a className="nav-link content">Partners</a>
               </Link>
             </li>
           </ul>
@@ -90,9 +90,9 @@ const Navbar = (props) => {
           display: block;
         }
         nav {
-          font-family: 'Comic Neue';
           font-size: 20px;
         }
+
         .basket {
           width: 30px;
           display: block;

@@ -1,15 +1,10 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 
-export default function thankYou() {
+export default function inProgress() {
   return (
     <Layout>
       <div>
-        <h3> THANK YOU FOR YOUR ORDER.</h3>
-        <p>
-          We know that you are super excited with your appointment, Therefore
-          You will soon receive the order confirmation via email.
-        </p>
+        <h3> THIS PAGE IS UNDER CONSTRUCTION.</h3>
 
         <p>
           Any questions? Then just give us a call at 043 0000000000,

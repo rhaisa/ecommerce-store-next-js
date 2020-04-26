@@ -28,7 +28,6 @@ export default function About() {
         {`
           .about {
             width: 60%;
-            font-family: 'Comic Neue';
             margin-top: 150px;
             margin-bottom: 150px;
             margin-left: auto;

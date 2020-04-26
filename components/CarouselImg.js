@@ -52,7 +52,6 @@ const CarouselImg = () => {
             display: flex;
             margin-right: auto;
             margin-left: auto;
-            font-family: 'Comic Neue';
           }
         `}
       </style>

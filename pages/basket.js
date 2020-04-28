@@ -77,78 +77,68 @@ export default function Basket(props) {
           {/* <input type="checkbox">PayPal</input>
           <input type="checkbox">Credit Card</input> */}
         </div>
+
         <form>
-          <div className="row">
-            <label for="fullName" className="col-lg-3">
-              Full Name:
-            </label>
-            <input type="name" name="name" className="form-control col-lg-9" />
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="inputFirstName">First Name</label>
+              <input
+                type="name"
+                className="form-control"
+                id="inputFirstName"
+                placeholder="First Name"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <label for="inputSecondName">Second Name</label>
+              <input
+                type="name"
+                className="form-control"
+                id="inputSecondName"
+                placeholder="Second Name"
+              />
+            </div>
           </div>
-          <div className="row">
-            <label for="email" className="col-lg-3">
-              Email Address:
-            </label>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                id="inputEmail4"
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <label for="scheduleDate">Schedule Date</label>
+              <input type="date" className="form-control" id="scheduleDate" />
+            </div>
+          </div>
+          <div className="form-group">
+            <label for="inputAddress">Address</label>
             <input
-              type="email"
-              name="email"
-              className="form-control col-lg-9"
-            ></input>
+              type="text"
+              className="form-control"
+              id="inputAddress"
+              placeholder="1234 Main St"
+            />
           </div>
-
-          <div className="address ">
-            <div className="row">
-              <label for="address" className="address " className="col-lg-3 ">
-                Address:
-              </label>
-              <input
-                type="address"
-                name="address"
-                className="form-control col-lg-9"
-              ></input>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" className="form-control" id="inputCity" />
             </div>
-            <div className="row">
-              <label for="zipCode" className="col-lg-3">
-                Zip Code:
-              </label>
-              <input
-                type="zipCode"
-                name="zipCode"
-                className="form-control col-lg-9"
-              ></input>
+            <div className="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" className="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
             </div>
-          </div>
-          <div className="contact">
-            <div className="row">
-              <label for="country" className="col-lg-3">
-                Country:
-              </label>
-              <input
-                type="country"
-                name="country"
-                className="form-control col-lg-9"
-              ></input>
+            <div className="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" className="form-control" id="inputZip" />
             </div>
-            <div className="row">
-              <label for="phone" className="col-lg-3">
-                Phone Number:
-              </label>
-              <input
-                type="phone"
-                name="phone"
-                className="form-control col-lg-9"
-              ></input>
-            </div>
-          </div>
-
-          <div className="row">
-            <label for="scheduleDate" className="address" className="col-lg-3">
-              Schedule Date:
-            </label>
-            <input
-              type="date"
-              name="scheduleDate"
-              className="form-control col-lg-9"
-            ></input>
           </div>
         </form>
 
@@ -157,49 +147,47 @@ export default function Basket(props) {
           {/* <input type="checkbox">PayPal</input>
           <input type="checkbox">Credit Card</input> */}
         </div>
+
         <form>
-          <div className="row">
-            <label for="nameOnCard" className="col-lg-3">
-              Name on Card:
-            </label>
+          <div className="form-group">
+            <label for="nameOnCard">Name on Card</label>
             <input
-              type="name"
-              name="nameOnCard"
-              className="form-control col-lg-9"
+              type="Name"
+              className="form-control"
+              id="nameOnCard"
+              placeholder="Name on Card"
             />
           </div>
-          <div className="row">
-            <label for="cardNumber:" className="col-lg-3">
-              Card number:
-            </label>
+          <div className="form-group">
+            <label for="cardNumber">Card Number</label>
             <input
               type="number"
-              name="cardNumber"
-              className="form-control col-lg-9"
-            ></input>
+              className="form-control"
+              id="cardNumber"
+              placeholder="4111 1111 1111 1111"
+            />
           </div>
-          <div className="security ">
-            <div className="row">
-              <label for="expiryDate" className="address" className="col-lg-3">
-                Expiry Date:
-              </label>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="expiryDate"> Expiry Date:</label>
               <input
                 type="text"
-                name="expiryDate"
-                className="form-control col-lg-9"
-              ></input>
+                className="form-control"
+                id="expiryDate"
+                placeholder="12/25"
+              />
             </div>
-            <div className="row">
-              <label for="securityCode" className="col-lg-3">
-                Security code:
-              </label>
+            <div className="form-group col-md-6">
+              <label for="securityCode">Security Code</label>
               <input
                 type="number"
-                name="securityCode"
-                className="form-control col-lg-9"
-              ></input>
+                className="form-control"
+                id="securityCode"
+                placeholder="123"
+              />
             </div>
           </div>
+
           <Link href="/thankYou">
             <button type="button" className="button btn btn-outline-dark">
               Finish Payment
@@ -239,6 +227,9 @@ export default function Basket(props) {
         .trash {
           width: 28px;
         }
+        .trash:hover {
+          cursor: pointer;
+        }
         .data {
           border: 2px solid #222;
           background-color: #222;
@@ -249,13 +240,11 @@ export default function Basket(props) {
         }
         form {
           width: 100%;
-          max-width: 800px;
+          max-width: 50%;
           margin-left: auto;
           margin-right: auto;
         }
         .address {
-          display: flex;
-          justify-content: space-between;
         }
 
         .contact {

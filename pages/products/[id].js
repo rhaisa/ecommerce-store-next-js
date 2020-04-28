@@ -106,6 +106,7 @@ export default function Product(props) {
           margin-left: auto;
           margin-right: auto;
           width: 250px;
+          max-width: 50%;
         }
         h2 {
           font-weight: bold;
